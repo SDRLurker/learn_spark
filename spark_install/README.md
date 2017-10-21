@@ -15,7 +15,7 @@ $ ./hadoop.sh
 master $ vi /etc/hosts
 </pre>
 
-비번 없이 접속하기 위해 authorized_keys localhost 및 원격서버 적용
+비번 없이 접속하기 위해 authorized_keys localhost 및 원격서버 적용.
 <pre>
 master $ ssh-copy-id localhost
 master $ ssh-copy-id slave01
@@ -24,12 +24,11 @@ master $ ssh-copy-id slave03
 master $ ssh-copy-id slave04
 </pre>
 
-하둡 멀티노드, 스파크 멀티노드 기동. 
+하둡 멀티노드, 스파크 멀티노드 설치. 
 <pre>
 $ ./hd_multi.sh
 $ ./setup.sh
 </pre>
-
 
 ## 하둡 기동  
 
@@ -38,11 +37,11 @@ $ cd $HADOOP_HOME/sbin
 $ ./start-all.sh
 </pre>
 
-$ cd $SPARK_HOME/sbin
-$ ./start-all.sh
+## 스파크 기동  
 
 <pre>
-$ ./setup.sh # 스파크 멀티노드세팅
+$ cd $SPARK_HOME/sbin
+$ ./start-all.sh
 </pre>
 
 # Install Maven
