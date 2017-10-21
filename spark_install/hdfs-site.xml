@@ -1,0 +1,17 @@
+  <property>
+    <name>dfs.replication</name>
+    <value>3</value>
+  </property>
+  <property>
+    <name>dfs.permissions</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>dfs.namenode.secondary.http-address</name>
+    <value>slave01:50090</value>
+  </property>
+  <property>
+    <name>dfs.namenode.secondary.https-address</name>
+    <value>slave01:50091</value>
+  </property>
+
