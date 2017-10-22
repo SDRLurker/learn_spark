@@ -12,6 +12,11 @@ cat hadoop-env.txt $HADOOP_ENV_DIR/hadoop-env.sh.$TODAY > $HADOOP_ENV_DIR/hadoop
 # 45/80
 cp -p $HADOOP_ENV_DIR/yarn-env.sh $HADOOP_ENV_DIR/yarn-env.sh.$TODAY
 cat hadoop-env.txt $HADOOP_ENV_DIR/yarn-env.sh.$TODAY > $HADOOP_ENV_DIR/yarn-env.sh
+# 46/80
+echo "slave01" > $HADOOP_ENV_DIR/slaves
+echo "slave02" >> $HADOOP_ENV_DIR/slaves
+echo "slave03" >> $HADOOP_ENV_DIR/slaves
+echo "slave04" >> $HADOOP_ENV_DIR/slaves
 # 47/80
 # https://stackoverflow.com/questions/16715373/insert-contents-of-a-file-after-specific-pattern-match
 mkdir -p /root/hadoop/tmp
