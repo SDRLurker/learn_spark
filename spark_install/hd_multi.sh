@@ -1,5 +1,6 @@
+#!/bin/bash
 # https://www.slideshare.net/TaeYoungLee1/20141029-25-hive
-TODAY=`date '%y%m%d'`
+TODAY=`date '+%y%m%d'`
 HADOOP_ENV_DIR=$HADOOP_HOME/etc/hadoop
 # https://stackoverflow.com/questions/638975/how-do-i-tell-if-a-regular-file-does-not-exist-in-bash
 if [ ! -f $HADOOP_HOME/etc/hadoop.tar.gz ]; then
@@ -19,17 +20,14 @@ echo "slave03" >> $HADOOP_ENV_DIR/slaves
 echo "slave04" >> $HADOOP_ENV_DIR/slaves
 # 47/80
 # https://stackoverflow.com/questions/16715373/insert-contents-of-a-file-after-specific-pattern-match
-mkdir -p /root/hadoop/tmp
 sed -i '/<configuration>/ r core-site.xml' $HADOOP_HOME/etc/hadoop/core-site.xml 
 # 48/80
-sed -i '/<configuration>/ r hdfs-site.xml' $HADOOP_HOME/etc/hadoop/hdfs-site.xml 
+mkdir -p $HOME/apps/hadoop/hdfs
+cat hdfs-site.xml | sed 's@~@'"$HOME"'@' > hdfs-site-tmp.xml
+sed -i '/<configuration>/ r hdfs-site-tmp.xml' $HADOOP_HOME/etc/hadoop/hdfs-site.xml 
+rm hdfs-site-tmp.xml
 # 49/80
+cp $HADOOP_HOME/etc/hadoop/mapred-site.xml.template $HADOOP_HOME/etc/hadoop/mapred-site.xml 
 sed -i '/<configuration>/ r mapred-site.xml' $HADOOP_HOME/etc/hadoop/mapred-site.xml 
 # 50/80
 sed -i '/<configuration>/ r yarn-site.xml' $HADOOP_HOME/etc/hadoop/yarn-site.xml 
-# 51/80
-scp -rp $HADOOP_HOME master:/opt/hadoop/.
-scp -rp $HADOOP_HOME slave01:/opt/hadoop/.
-scp -rp $HADOOP_HOME slave02:/opt/hadoop/.
-scp -rp $HADOOP_HOME slave03:/opt/hadoop/.
-scp -rp $HADOOP_HOME slave04:/opt/hadoop/.

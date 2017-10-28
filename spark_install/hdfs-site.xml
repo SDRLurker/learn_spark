@@ -3,6 +3,14 @@
     <value>3</value>
   </property>
   <property>
+    <name>dfs.name.dir</name>
+    <value>~/apps/hadoop/hdfs/name</value>
+  </property>
+  <property>
+    <name>dfs.data.dir</name>
+    <value>~/apps/hadoop/hdfs/data</value>
+  </property>
+  <property>
     <name>dfs.permissions</name>
     <value>false</value>
   </property>
