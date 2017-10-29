@@ -145,7 +145,7 @@ Java를 설치합니다.
 [spark@master spark_install]$ exit
 </pre>
 
-###제플린설치
+### 제플린설치
 
 제플린을 설치합니다.
 <pre>
