@@ -141,7 +141,7 @@ Java를 설치합니다.
 
 메이븐을 설치합니다.
 <pre>
-[spark@master spark_install]$ ./spark.sh
+[spark@master spark_install]$ ./maven.sh
 [spark@master spark_install]$ exit
 </pre>
 
